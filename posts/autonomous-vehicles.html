@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="An in-depth look at how deep learning — object detection, sensor fusion, and end-to-end driving networks — powers autonomous vehicles." />
+  <title>Deep Learning in Autonomous Vehicles | Deep Learning Insights</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%2300bcd4' opacity='0.2'/><circle cx='50' cy='50' r='18' fill='%2300bcd4'/><circle cx='14' cy='32' r='11' fill='%231a73e8'/><circle cx='14' cy='68' r='11' fill='%231a73e8'/><circle cx='86' cy='32' r='11' fill='%231a73e8'/><circle cx='86' cy='68' r='11' fill='%231a73e8'/><line x1='25' y1='34' x2='39' y2='45' stroke='%2300bcd4' stroke-width='5'/><line x1='25' y1='66' x2='39' y2='55' stroke='%2300bcd4' stroke-width='5'/><line x1='75' y1='34' x2='61' y2='45' stroke='%2300bcd4' stroke-width='5'/><line x1='75' y1='66' x2='61' y2='55' stroke='%2300bcd4' stroke-width='5'/></svg>" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="../index.html" class="nav-brand">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <circle cx="14" cy="14" r="13" fill="#00bcd4" opacity="0.15"/>
+          <circle cx="14" cy="14" r="5" fill="#00bcd4"/>
+          <circle cx="4"  cy="9"  r="3" fill="#1a73e8"/>
+          <circle cx="4"  cy="19" r="3" fill="#1a73e8"/>
+          <circle cx="24" cy="9"  r="3" fill="#1a73e8"/>
+          <circle cx="24" cy="19" r="3" fill="#1a73e8"/>
+          <line x1="7" y1="9.5"  x2="11" y2="12.5" stroke="#00bcd4" stroke-width="1.5"/>
+          <line x1="7" y1="18.5" x2="11" y2="15.5" stroke="#00bcd4" stroke-width="1.5"/>
+          <line x1="21" y1="9.5"  x2="17" y2="12.5" stroke="#00bcd4" stroke-width="1.5"/>
+          <line x1="21" y1="18.5" x2="17" y2="15.5" stroke="#00bcd4" stroke-width="1.5"/>
+        </svg>
+        Deep<span>Learning</span> Insights
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6"  x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#topics">Topics</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../index.html#newsletter">Subscribe</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- POST HERO -->
+  <header class="post-hero">
+    <div class="container">
+      <div class="post-hero-inner">
+        <nav class="post-breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span>/</span>
+          <a href="../index.html#articles">Articles</a>
+          <span>/</span>
+          <span>Autonomous Vehicles</span>
+        </nav>
+        <div class="card-tags" style="margin-bottom:1rem;">
+          <span class="tag" style="background:rgba(46,125,50,0.2);color:#81c784;">Autonomous Vehicles</span>
+          <span class="tag" style="background:rgba(0,188,212,0.2);color:#00bcd4;">Computer Vision</span>
+          <span class="tag" style="background:rgba(255,111,0,0.2);color:#ffa726;">Sensor Fusion</span>
+        </div>
+        <h1>Deep Learning Behind the Wheel: How Self-Driving Cars See the World</h1>
+        <div class="post-meta-bar">
+          <span class="post-meta-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            February 10, 2026
+          </span>
+          <span class="post-meta-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            Sukant Ravichandran
+          </span>
+          <span class="reading-time">9 min read</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- POST BODY -->
+  <main class="post-content-wrapper">
+    <article class="post-body">
+
+      <p>
+        Self-driving vehicles represent one of the most ambitious and technically challenging applications
+        of deep learning. Building a car that can perceive its environment, predict the behaviour of
+        pedestrians and other vehicles, plan a safe path, and execute precise control — all in real time,
+        across an infinite variety of scenarios — demands deep learning at every stage of the stack.
+      </p>
+
+      <div class="callout callout--info">
+        <strong class="callout-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Market Outlook
+        </strong>
+        <p>
+          The global autonomous vehicle market is projected to reach <strong>$556 billion by 2026</strong>.
+          Companies like Waymo, Tesla, Cruise, Mobileye, and Baidu are leading a race that will
+          reshape transportation, logistics, and urban planning.
+        </p>
+      </div>
+
+      <div class="stat-box">
+        <div class="stat-box-item">
+          <span class="num">20M+</span>
+          <span class="label">Miles driven autonomously by Waymo on public roads</span>
+        </div>
+        <div class="stat-box-item">
+          <span class="num">100+</span>
+          <span class="label">Sensors on a typical Level 4 autonomous vehicle</span>
+        </div>
+        <div class="stat-box-item">
+          <span class="num">1TB</span>
+          <span class="label">Data generated per hour of AV driving</span>
+        </div>
+        <div class="stat-box-item">
+          <span class="num">4ms</span>
+          <span class="label">Maximum inference latency for real-time object detection</span>
+        </div>
+      </div>
+
+      <h2>The Perception Stack: Seeing the World</h2>
+      <p>
+        An autonomous vehicle must first perceive its environment — detecting and classifying every
+        object around it in real time. This relies on a rich sensor suite and deep learning models
+        to interpret the data.
+      </p>
+
+      <h3>Sensor Suite</h3>
+      <div class="use-case-grid">
+        <div class="use-case-item">
+          <span class="use-case-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg></span>
+          <h4>Cameras</h4>
+          <p>High-resolution RGB cameras provide rich texture and colour information. CNNs and transformers process these for lane detection, traffic sign recognition, and object classification.</p>
+        </div>
+        <div class="use-case-item">
+          <span class="use-case-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 6l5 5M1 12h6M1 18l5-5M12 1v6M18 1l-5 5M23 1l-5 5M12 18v5M18 23l-5-5M23 23l-5-5"/><circle cx="12" cy="12" r="4"/></svg></span>
+          <h4>LiDAR</h4>
+          <p>Light Detection and Ranging creates precise 3D point clouds of the environment. PointNet and VoxelNet architectures process sparse 3D data for accurate spatial localisation.</p>
+        </div>
+        <div class="use-case-item">
+          <span class="use-case-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.636 5.636a9 9 0 1012.728 12.728M5.636 5.636A9 9 0 0018.364 18.364M5.636 5.636L18.364 18.364"/><circle cx="12" cy="12" r="3"/></svg></span>
+          <h4>RADAR</h4>
+          <p>Reliable in all weather conditions, RADAR provides velocity measurements through Doppler effect — critical for detecting fast-moving vehicles at long range.</p>
+        </div>
+        <div class="use-case-item">
+          <span class="use-case-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg></span>
+          <h4>Sensor Fusion</h4>
+          <p>Deep learning fusion networks combine all sensor modalities into a unified scene representation — more robust than any single sensor alone.</p>
+        </div>
+      </div>
+
+      <h2>Object Detection: YOLO and Beyond</h2>
+      <p>
+        <strong>YOLO (You Only Look Once)</strong> remains the gold standard for real-time object
+        detection in AV perception stacks. YOLOv8 and YOLOv9 can detect pedestrians, cyclists,
+        vehicles, and traffic signs at 120+ frames per second on automotive-grade GPUs.
+      </p>
+      <p>
+        More recent approaches use <strong>BEV (Bird's Eye View) transformers</strong> that fuse
+        multi-camera images into a single top-down representation of the scene — dramatically
+        simplifying downstream path planning. Tesla's FSD (Full Self-Driving) stack is built
+        around this paradigm.
+      </p>
+
+      <h2>Prediction: What Will Other Agents Do?</h2>
+      <p>
+        Knowing where other vehicles and pedestrians <em>are</em> is not enough — the AV must predict
+        where they will <em>be</em> in the next 5–10 seconds. This is achieved using
+        <strong>graph neural networks (GNNs)</strong> and <strong>trajectory prediction models</strong>
+        like Wayformer, MotionCNN, and MTR-A, which model the complex social interactions between agents.
+      </p>
+
+      <h2>End-to-End Learning vs. Modular Stacks</h2>
+      <p>
+        Traditional AV stacks decompose the driving task into perception → prediction → planning →
+        control modules, each with separate models. <strong>End-to-end deep learning</strong>, pioneered
+        by Nvidia's DAVE and refined by companies like Comma.ai, trains a single neural network that maps
+        raw sensor inputs directly to steering and throttle commands.
+      </p>
+      <p>
+        End-to-end approaches can capture implicit rules and edge cases that are hard to hand-code, but
+        lack the interpretability and modularity of classical stacks — an active area of research
+        for safety certification.
+      </p>
+
+      <div class="callout callout--success">
+        <strong class="callout-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+          Waymo One: Autonomous Ride-Hailing in the Real World
+        </strong>
+        <p>
+          Waymo's robotaxi service in San Francisco and Phoenix demonstrates a fully driverless AV
+          in dense urban environments. Waymo's 5th-generation Driver uses a custom deep learning
+          stack processing data from 29 cameras, 5 LiDARs, and 6 RADARs — handling the full AV
+          stack from raw sensor data to wheel actuation.
+        </p>
+      </div>
+
+      <h2>Key Models and Frameworks</h2>
+      <table class="tech-table">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Model / Framework</th>
+            <th>Organisation / Use</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Object Detection (Camera)</td>
+            <td>YOLOv9, DETR, RT-DETR</td>
+            <td>Real-time 2D detection of vehicles, pedestrians, cyclists</td>
+          </tr>
+          <tr>
+            <td>3D Object Detection (LiDAR)</td>
+            <td>PointPillars, VoxelNet, CenterPoint</td>
+            <td>Precise 3D bounding box estimation from point clouds</td>
+          </tr>
+          <tr>
+            <td>Sensor Fusion / BEV</td>
+            <td>BEVFusion, BEVFormer</td>
+            <td>Multi-modal fusion into a unified BEV representation</td>
+          </tr>
+          <tr>
+            <td>Semantic Segmentation</td>
+            <td>SegFormer, DeepLabV3+</td>
+            <td>Pixel-level classification of road, lanes, sky, vegetation</td>
+          </tr>
+          <tr>
+            <td>Motion Prediction</td>
+            <td>Wayformer, MTR-A</td>
+            <td>Predicting future trajectories of pedestrians and vehicles</td>
+          </tr>
+          <tr>
+            <td>Simulation</td>
+            <td>CARLA, nuPlan</td>
+            <td>Open-source AV simulators for training and testing DL models</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Challenges and Safety</h2>
+      <h3>Long-Tail Edge Cases</h3>
+      <p>
+        AVs can handle common scenarios reliably, but rare edge cases — animals on the road,
+        unusual road markings, construction zones — remain challenging. Massive simulation
+        and <strong>adversarial scenario generation</strong> using GANs help generate diverse
+        training data for these low-frequency situations.
+      </p>
+
+      <h3>Domain Shift</h3>
+      <p>
+        A model trained primarily in sunny Californian weather may fail in Finnish winter conditions.
+        <strong>Domain adaptation</strong> and <strong>continual learning</strong> techniques ensure
+        models maintain performance as they encounter new environments.
+      </p>
+
+      <h3>Safety Certification</h3>
+      <p>
+        Certifying that an AI-driven vehicle is sufficiently safe for public roads requires
+        demonstrating performance across billions of miles of diverse scenarios — achievable
+        only through large-scale simulation. ISO 26262 (functional safety) and SOTIF
+        (Safety Of The Intended Functionality, ISO 21448) provide the regulatory frameworks
+        for AV safety validation.
+      </p>
+
+      <div class="callout callout--warn">
+        <strong class="callout-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Ethical Considerations
+        </strong>
+        <p>
+          AV decision-making in unavoidable crash scenarios raises ethical questions about
+          how systems should be programmed to minimise harm. Transparency and public
+          consultation are essential as AVs move toward mainstream deployment.
+        </p>
+      </div>
+
+      <h2>The Road Ahead</h2>
+      <p>
+        The convergence of <strong>foundation models</strong> (large pre-trained models adapted
+        for AV tasks), improved simulation, and purpose-built AV chips (Nvidia Orin, Tesla FSD chip)
+        will accelerate progress toward Level 4 and Level 5 autonomy. The first fully autonomous
+        commercial logistics fleets are already operating — Aurora's trucks haul freight daily on
+        Texas highways without a safety driver.
+      </p>
+
+    </article>
+
+    <!-- Post Navigation -->
+    <nav class="post-nav" aria-label="Post navigation">
+      <a href="nlp-customer-service.html" class="post-nav-item" style="text-decoration:none;">
+        <div class="post-nav-label">← Previous</div>
+        <h4>NLP &amp; Customer Service</h4>
+      </a>
+      <a href="finance-fraud-detection.html" class="post-nav-item" style="text-decoration:none;text-align:right;">
+        <div class="post-nav-label">Next →</div>
+        <h4>Deep Learning in Finance</h4>
+      </a>
+    </nav>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand">
+            <svg width="22" height="22" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+              <circle cx="14" cy="14" r="13" fill="#00bcd4" opacity="0.15"/>
+              <circle cx="14" cy="14" r="5" fill="#00bcd4"/>
+              <circle cx="4"  cy="9"  r="3" fill="#1a73e8"/>
+              <circle cx="4"  cy="19" r="3" fill="#1a73e8"/>
+              <circle cx="24" cy="9"  r="3" fill="#1a73e8"/>
+              <circle cx="24" cy="19" r="3" fill="#1a73e8"/>
+              <line x1="7" y1="9.5"  x2="11" y2="12.5" stroke="#00bcd4" stroke-width="1.5"/>
+              <line x1="7" y1="18.5" x2="11" y2="15.5" stroke="#00bcd4" stroke-width="1.5"/>
+              <line x1="21" y1="9.5"  x2="17" y2="12.5" stroke="#00bcd4" stroke-width="1.5"/>
+              <line x1="21" y1="18.5" x2="17" y2="15.5" stroke="#00bcd4" stroke-width="1.5"/>
+            </svg>
+            Deep<span>Learning</span> Insights
+          </div>
+          <p>An open knowledge hub dedicated to demystifying deep learning and showcasing its transformative impact across industries.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Articles</h5>
+          <ul class="footer-links">
+            <li><a href="../posts/computer-vision-healthcare.html">Computer Vision in Healthcare</a></li>
+            <li><a href="../posts/nlp-customer-service.html">NLP &amp; Chatbots</a></li>
+            <li><a href="../posts/autonomous-vehicles.html">Autonomous Vehicles</a></li>
+            <li><a href="../posts/finance-fraud-detection.html">Finance &amp; Fraud</a></li>
+            <li><a href="../posts/manufacturing-industry4.html">Manufacturing &amp; Industry 4.0</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Site</h5>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../index.html#newsletter">Subscribe</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span><strong style="color:#fff;">Sukant Ravichandran</strong></span>
+        <a href="../index.html" style="color:var(--accent);">← Back to Home</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
