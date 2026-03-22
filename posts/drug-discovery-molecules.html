@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Deep learning in drug discovery: protein folding, ADMET prediction, molecular generation, and accelerating pharmaceutical innovation with AI." />
+  <title>Deep Learning in Drug Discovery | Protein Folding & ADMET | Deep Learning Insights</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%2300bcd4' opacity='0.2'/><circle cx='50' cy='50' r='18' fill='%2300bcd4'/><circle cx='14' cy='32' r='11' fill='%231a73e8'/><circle cx='14' cy='68' r='11' fill='%231a73e8'/><circle cx='86' cy='32' r='11' fill='%231a73e8'/><circle cx='86' cy='68' r='11' fill='%231a73e8'/><line x1='25' y1='34' x2='39' y2='45' stroke='%2300bcd4' stroke-width='5'/><line x1='25' y1='66' x2='39' y2='55' stroke='%2300bcd4' stroke-width='5'/><line x1='75' y1='34' x2='61' y2='45' stroke='%2300bcd4' stroke-width='5'/><line x1='75' y1='66' x2='61' y2='55' stroke='%2300bcd4' stroke-width='5'/></svg>" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="../index.html" class="nav-brand">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <circle cx="14" cy="14" r="13" fill="#00bcd4" opacity="0.15"/>
+          <circle cx="14" cy="14" r="5" fill="#00bcd4"/>
+          <circle cx="4"  cy="9"  r="3" fill="#1a73e8"/>
+          <circle cx="4"  cy="19" r="3" fill="#1a73e8"/>
+          <circle cx="24" cy="9"  r="3" fill="#1a73e8"/>
+          <circle cx="24" cy="19" r="3" fill="#1a73e8"/>
+          <line x1="7" y1="9.5"  x2="11" y2="12.5" stroke="#00bcd4" stroke-width="1.5"/>
+          <line x1="7" y1="18.5" x2="11" y2="15.5" stroke="#00bcd4" stroke-width="1.5"/>
+          <line x1="21" y1="9.5"  x2="17" y2="12.5" stroke="#00bcd4" stroke-width="1.5"/>
+          <line x1="21" y1="18.5" x2="17" y2="15.5" stroke="#00bcd4" stroke-width="1.5"/>
+        </svg>
+        Deep<span>Learning</span> Insights
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6"  x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#topics">Topics</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../index.html#newsletter">Subscribe</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- POST HERO -->
+  <header class="post-hero">
+    <div class="container">
+      <div class="post-hero-inner">
+        <nav class="post-breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span>/</span>
+          <a href="../index.html#articles">Articles</a>
+          <span>/</span>
+          <span>Drug Discovery</span>
+        </nav>
+        <div class="card-tags" style="margin-bottom:1rem;">
+          <span class="tag" style="background:rgba(156,39,176,0.2);color:#ce93d8;">Pharma</span>
+          <span class="tag" style="background:rgba(0,188,212,0.2);color:#00bcd4;">Protein Folding</span>
+          <span class="tag" style="background:rgba(233,30,99,0.2);color:#f06292;">ADMET</span>
+        </div>
+        <h1>Deep Learning Accelerates Drug Discovery: From Protein Folding to ADMET Prediction</h1>
+        <div style="margin:2rem 0;border-radius:12px;overflow:hidden;max-height:400px;">
+          <img src="../images/drugdiscovery.png" alt="AI-Driven Drug Discovery & Molecule Design" style="width:100%;height:auto;object-fit:cover;"/>
+        </div>
+        <div class="post-meta-bar">
+          <span class="post-meta-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            March 20, 2026
+          </span>
+          <span class="post-meta-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            Sukant Ravichandran
+          </span>
+          <span class="reading-time">9 min read</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- POST BODY -->
+  <main class="post-content-wrapper">
+    <article class="post-body">
+
+      <p>
+        Drug discovery has historically been a slow, expensive process: identifying promising compounds, synthesizing them,
+        and testing them in laboratories can take 10+ years and cost billions of dollars. Deep learning is fundamentally
+        accelerating this process by solving the hardest problems in computational chemistry - predicting protein structures,
+        identifying promising drug candidates, and forecasting safety and efficacy properties before synthesis.
+      </p>
+
+      <div class="callout callout--info">
+        <strong class="callout-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Market Outlook
+        </strong>
+        <p>
+          AI-powered drug discovery is projected to account for <strong>30% of new FDA approvals by 2030</strong>.
+          Companies like DeepMind (Google), Recursion, Exscientia, Schrodinger, and major pharma firms are racing
+          to integrate deep learning into every stage of drug development.
+        </p>
+      </div>
+
+      <div class="stat-box">
+        <div class="stat-box-item">
+          <span class="num">10-15</span>
+          <span class="label">Years reduced in drug discovery timeline with AI</span>
+        </div>
+        <div class="stat-box-item">
+          <span class="num">50%</span>
+          <span class="label">Cost reduction potential with AI-driven candidate identification</span>
+        </div>
+        <div class="stat-box-item">
+          <span class="num">200M+</span>
+          <span class="label">Drug-like molecules in searchable space</span>
+        </div>
+        <div class="stat-box-item">
+          <span class="num">99.99%</span>
+          <span class="label">AlphaFold accuracy on CASP15 protein structure prediction</span>
+        </div>
+      </div>
+
+      <h2>Featured Video: AI Accelerating Drug Discovery</h2>
+      <div style="margin:2rem 0;border-radius:12px;overflow:hidden;max-width:100%;">
+        <video width="100%" height="auto" controls style="border-radius:12px;background:#000;">
+          <source src="../videos/drugDiscovery.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <h2>Protein Structure Prediction: Solving the 50-Year Problem</h2>
+      <p>
+        Understanding how proteins fold into 3D structures is fundamental to biology and drug discovery. For 50 years,
+        determining structure required X-ray crystallography or cryo-electron microscopy - expensive, time-consuming techniques.
+        Deep learning has solved this problem with stunning accuracy.
+      </p>
+
+      <h3>AlphaFold and the Revolution</h3>
+      <p>
+        DeepMind's <strong>AlphaFold</strong> uses attention mechanisms and evolutionary data to predict protein structures
+        from amino acid sequences with accuracy matching experimental methods. AlphaFold2 can predict nearly all known proteins
+        on Earth - over 200 million structures - in mere hours. This is a paradigm shift: researchers no longer wait months
+        for structural data; they get high-confidence predictions instantly.
+      </p>
+      <p>
+        The implications for drug discovery are profound. Knowing a protein's structure immediately reveals binding pockets
+        where drugs could bind, enabling faster virtual screening of billions of candidate compounds.
+      </p>
+
+      <h2>Molecular Docking and Virtual Screening</h2>
+      <p>
+        With a protein structure in hand, the next step is finding molecules that bind strongly and specifically.
+        Traditional molecular docking simulates interactions between molecules and proteins - computationally expensive
+        and sometimes inaccurate. Deep learning models trained on experimental binding affinity data can predict
+        binding strength orders of magnitude faster.
+      </p>
+
+      <div class="use-case-grid">
+        <div class="use-case-item">
+          <span class="use-case-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M9 3v7l-5 11h16L15 10V3"/><line x1="6" y1="17" x2="18" y2="17"/></svg></span>
+          <h4>Graph Neural Networks</h4>
+          <p>GNNs naturally represent molecules as graphs, with atoms as nodes and bonds as edges. Models like GCN, GraphSAGE, and Message Passing Neural Networks predict binding affinity far faster than docking simulations.</p>
+        </div>
+        <div class="use-case-item">
+          <span class="use-case-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><line x1="6" y1="9" x2="6" y2="15"/><line x1="6" y1="15" x2="18" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+          <h4>Sequence-Based Models</h4>
+          <p>Transformers processing SMILES (simplified molecular notation) or other sequence representations of molecules enable rapid scanning of chemical space without explicit 3D coordinates.</p>
+        </div>
+        <div class="use-case-item">
+          <span class="use-case-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5c1.7 0 3.29.474 4.658 1.3"/><path d="M12 5c-1.7 0-3.29.474-4.658 1.3"/><circle cx="12" cy="12" r="7"/><line x1="12" y1="5" x2="12" y2="19"/></svg></span>
+          <h4>3D Convolutional Networks</h4>
+          <p>3D CNNs operating on volumetric representations of protein-ligand complexes learn spatial binding patterns and can predict poses and affinities simultaneously.</p>
+        </div>
+        <div class="use-case-item">
+          <span class="use-case-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></span>
+          <h4>Ranking & Retrieval</h4>
+          <p>Learning-to-rank models efficiently identify top candidates from billions of molecules, drastically reducing the number requiring expensive validation.</p>
+        </div>
+      </div>
+
+      <h2>ADMET Prediction: Safety Before Synthesis</h2>
+      <p>
+        <strong>ADMET</strong> - Absorption, Distribution, Metabolism, Excretion, and Toxicity - predicts whether a molecule
+        will be safe and effective as a drug. Historically, this required time-consuming experiments. Deep learning models
+        predict ADMET properties from molecular structure, eliminating poor candidates early in the pipeline.
+      </p>
+
+      <h3>Multi-Task Learning for ADMET</h3>
+      <p>
+        A single deep learning model can simultaneously predict multiple ADMET properties (hepatotoxicity, kidney toxicity,
+        hERG inhibition, blood-brain barrier penetration, oral bioavailability, etc.). Multi-task learning shares learned
+        representations across tasks, improving accuracy for each property and enabling rapid, comprehensive safety assessment.
+      </p>
+
+      <div class="callout callout--success">
+        <strong class="callout-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+          Case Study: Exscientia's AI-Discovered Drug
+        </strong>
+        <p>
+          Exscientia and Sumitomo Dainippon Pharma developed the first drug candidate identified entirely through
+          AI-driven discovery, EXS21546, in just 12 months - compared to the typical 4-6 year timeline. The drug
+          entered human trials in 2021, demonstrating that AI-designed molecules can be viable and safe.
+        </p>
+      </div>
+
+      <h2>Generative Models: Designing Molecules from Scratch</h2>
+      <p>
+        Rather than screening existing compounds, generative models can design entirely new molecules optimized for
+        target properties. These models learn the chemical rules that govern valid molecules, then generate candidates
+        with desired characteristics.
+      </p>
+
+      <h3>Generative Architectures</h3>
+      <p>
+        <strong>Variational Autoencoders (VAEs)</strong> learn a latent representation of molecular space, enabling interpolation
+        and guided generation. <strong>Transformer-based generative models</strong> trained on SMILES strings can generate
+        chemically valid molecules conditioned on desired properties. <strong>Graph generative networks</strong> directly
+        construct molecular graphs, respecting valency and bond order constraints.
+      </p>
+      <p>
+        <strong>Reinforcement learning</strong> fine-tunes generators to maximize desired properties (binding affinity,
+        drug-likeness, synthetic accessibility) while staying within chemically valid space. This enables end-to-end
+        optimization: generate candidates, predict their properties, reward good ones, and iteratively improve.
+      </p>
+
+      <h2>Key Models and Datasets</h2>
+      <table class="tech-table">
+        <thead>
+          <tr>
+            <th>Application</th>
+            <th>Model / Framework</th>
+            <th>Key Metrics</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Protein Structure Prediction</td>
+            <td>AlphaFold2, OmegaFold</td>
+            <td>99.99% accuracy on CASP15, covers 200M+ proteins</td>
+          </tr>
+          <tr>
+            <td>Binding Affinity Prediction</td>
+            <td>Graph Neural Networks (AttentiveFP, GIN)</td>
+            <td>Pearson R > 0.8, 100-1000x faster than docking</td>
+          </tr>
+          <tr>
+            <td>ADMET Prediction</td>
+            <td>Multi-task GNNs (DeepChem, PyTorch)</td>
+            <td>AUC 0.80-0.95 for toxicity prediction</td>
+          </tr>
+          <tr>
+            <td>Molecular Generation</td>
+            <td>Transformer VAE, Graph VAE</td>
+            <td>Generates valid molecules with 90%+ chemical validity</td>
+          </tr>
+          <tr>
+            <td>Synthetic Accessibility</td>
+            <td>RNN on retrosynthesis paths</td>
+            <td>Predicts if compound can be synthesized in lab</td>
+          </tr>
+          <tr>
+            <td>Datasets</td>
+            <td>PubChem, ChEMBL, Protein Data Bank, ZINC</td>
+            <td>Millions of compounds with measured bioactivity and safety data</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Challenges and Limitations</h2>
+      <h3>Limited Training Data</h3>
+      <p>
+        While there are millions of compounds with measured properties, this is tiny compared to the 10^60 possible
+        drug-like molecules. Transfer learning from related tasks and few-shot learning help, but data scarcity remains
+        a fundamental challenge.
+      </p>
+
+      <h3>Generalization Beyond Training Distribution</h3>
+      <p>
+        Models trained on known drugs may fail on novel scaffolds encountered during generative design. Domain adaptation
+        and uncertainty quantification are critical for trustworthy predictions on out-of-distribution molecules.
+      </p>
+
+      <h3>Validation in Wet Lab</h3>
+      <p>
+        AI predictions must ultimately be validated experimentally. Integration of AI with high-throughput screening and
+        automated synthesis enables rapid feedback loops, refining models with real experimental data.
+      </p>
+
+      <h2>The Future: AI-Native Drug Development</h2>
+      <p>
+        The convergence of protein structure prediction, molecular property forecasting, and generative design creates
+        a fully AI-driven drug discovery pipeline. Companies like Recursion and Insilicom are building platforms where
+        AI designs candidates, automated labs synthesize and test them, and results feed back to improve the models.
+      </p>
+      <p>
+        With FDA increasingly open to AI-assisted submissions, and clinical evidence that AI-designed drugs work, the next
+        wave of therapeutics will be fundamentally different - designed by machines, optimized for efficacy and safety
+        in silico before ever entering a lab.
+      </p>
+
+    </article>
+
+    <!-- Post Navigation -->
+    <nav class="post-nav" aria-label="Post navigation">
+      <a href="energy-grid-optimization.html" class="post-nav-item" style="text-decoration:none;">
+        <div class="post-nav-label">← Previous</div>
+        <h4>Energy &amp; Grid Optimization</h4>
+      </a>
+      <a href="../index.html" class="post-nav-item" style="text-decoration:none;text-align:right;">
+        <div class="post-nav-label">Back to Home →</div>
+        <h4>All Articles</h4>
+      </a>
+    </nav>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand">
+            <svg width="22" height="22" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+              <circle cx="14" cy="14" r="13" fill="#00bcd4" opacity="0.15"/>
+              <circle cx="14" cy="14" r="5" fill="#00bcd4"/>
+              <circle cx="4"  cy="9"  r="3" fill="#1a73e8"/>
+              <circle cx="4"  cy="19" r="3" fill="#1a73e8"/>
+              <circle cx="24" cy="9"  r="3" fill="#1a73e8"/>
+              <circle cx="24" cy="19" r="3" fill="#1a73e8"/>
+              <line x1="7" y1="9.5"  x2="11" y2="12.5" stroke="#00bcd4" stroke-width="1.5"/>
+              <line x1="7" y1="18.5" x2="11" y2="15.5" stroke="#00bcd4" stroke-width="1.5"/>
+              <line x1="21" y1="9.5"  x2="17" y2="12.5" stroke="#00bcd4" stroke-width="1.5"/>
+              <line x1="21" y1="18.5" x2="17" y2="15.5" stroke="#00bcd4" stroke-width="1.5"/>
+            </svg>
+            Deep<span>Learning</span> Insights
+          </div>
+          <p>An open knowledge hub dedicated to demystifying deep learning and showcasing its transformative impact across industries.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Articles</h5>
+          <ul class="footer-links">
+            <li><a href="../posts/computer-vision-healthcare.html">Computer Vision in Healthcare</a></li>
+            <li><a href="../posts/nlp-customer-service.html">NLP &amp; Chatbots</a></li>
+            <li><a href="../posts/autonomous-vehicles.html">Autonomous Vehicles</a></li>
+            <li><a href="../posts/finance-fraud-detection.html">Finance &amp; Fraud</a></li>
+            <li><a href="../posts/manufacturing-industry4.html">Manufacturing &amp; Industry 4.0</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Site</h5>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../index.html#newsletter">Subscribe</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span><strong style="color:#fff;">Sukant Ravichandran</strong></span>
+        <a href="../index.html" style="color:var(--accent);">← Back to Home</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

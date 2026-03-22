@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Deep learning applications in agriculture: crop disease detection, yield prediction, and precision farming powered by computer vision and AI." />
+  <title>Deep Learning in Agriculture | Crop Disease & Yield | Deep Learning Insights</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%2300bcd4' opacity='0.2'/><circle cx='50' cy='50' r='18' fill='%2300bcd4'/><circle cx='14' cy='32' r='11' fill='%231a73e8'/><circle cx='14' cy='68' r='11' fill='%231a73e8'/><circle cx='86' cy='32' r='11' fill='%231a73e8'/><circle cx='86' cy='68' r='11' fill='%231a73e8'/><line x1='25' y1='34' x2='39' y2='45' stroke='%2300bcd4' stroke-width='5'/><line x1='25' y1='66' x2='39' y2='55' stroke='%2300bcd4' stroke-width='5'/><line x1='75' y1='34' x2='61' y2='45' stroke='%2300bcd4' stroke-width='5'/><line x1='75' y1='66' x2='61' y2='55' stroke='%2300bcd4' stroke-width='5'/></svg>" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="../index.html" class="nav-brand">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <circle cx="14" cy="14" r="13" fill="#00bcd4" opacity="0.15"/>
+          <circle cx="14" cy="14" r="5" fill="#00bcd4"/>
+          <circle cx="4"  cy="9"  r="3" fill="#1a73e8"/>
+          <circle cx="4"  cy="19" r="3" fill="#1a73e8"/>
+          <circle cx="24" cy="9"  r="3" fill="#1a73e8"/>
+          <circle cx="24" cy="19" r="3" fill="#1a73e8"/>
+          <line x1="7" y1="9.5"  x2="11" y2="12.5" stroke="#00bcd4" stroke-width="1.5"/>
+          <line x1="7" y1="18.5" x2="11" y2="15.5" stroke="#00bcd4" stroke-width="1.5"/>
+          <line x1="21" y1="9.5"  x2="17" y2="12.5" stroke="#00bcd4" stroke-width="1.5"/>
+          <line x1="21" y1="18.5" x2="17" y2="15.5" stroke="#00bcd4" stroke-width="1.5"/>
+        </svg>
+        Deep<span>Learning</span> Insights
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6"  x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#topics">Topics</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../index.html#newsletter">Subscribe</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- POST HERO -->
+  <header class="post-hero">
+    <div class="container">
+      <div class="post-hero-inner">
+        <nav class="post-breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span>/</span>
+          <a href="../index.html#articles">Articles</a>
+          <span>/</span>
+          <span>Agriculture</span>
+        </nav>
+        <div class="card-tags" style="margin-bottom:1rem;">
+          <span class="tag" style="background:rgba(27,94,32,0.2);color:#81c784;">Agriculture</span>
+          <span class="tag" style="background:rgba(0,188,212,0.2);color:#00bcd4;">Computer Vision</span>
+          <span class="tag" style="background:rgba(255,111,0,0.2);color:#ffa726;">Precision Farming</span>
+        </div>
+        <h1>Deep Learning in Agriculture: Detecting Disease and Maximizing Crop Yield</h1>
+        <div style="margin:2rem 0;border-radius:12px;overflow:hidden;max-height:400px;display:flex;gap:1rem;">
+          <div style="flex:1;">
+            <img src="../images/Agriculture.png" alt="Crop Disease Detection" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"/>
+          </div>
+          <div style="flex:1;">
+            <img src="../images/droneImagery.png" alt="Drone Imagery for Precision Farming" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"/>
+          </div>
+        </div>
+        <div class="post-meta-bar">
+          <span class="post-meta-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            March 12, 2026
+          </span>
+          <span class="post-meta-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            Sukant Ravichandran
+          </span>
+          <span class="reading-time">7 min read</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- POST BODY -->
+  <main class="post-content-wrapper">
+    <article class="post-body">
+
+      <p>
+        Agriculture feeds the world, yet farming remains one of the least digitized sectors. Deep learning is changing
+        that. By combining computer vision with drones, satellites, and ground sensors, farmers can now detect crop diseases
+        early, predict yields with high accuracy, and optimize resource use - all powered by deep neural networks trained on
+        millions of crop images.
+      </p>
+
+      <div class="callout callout--info">
+        <strong class="callout-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Market Outlook
+        </strong>
+        <p>
+          The global AgriTech market is projected to reach <strong>$22 billion by 2026</strong>.
+          Companies like John Deere, Climate FieldView, Trimble, and Indigo Ag are deploying
+          deep learning to enable precision agriculture at scale.
+        </p>
+      </div>
+
+      <div class="stat-box">
+        <div class="stat-box-item">
+          <span class="num">35%</span>
+          <span class="label">Average crop loss from pests and diseases annually</span>
+        </div>
+        <div class="stat-box-item">
+          <span class="num">98%</span>
+          <span class="label">Accuracy of deep learning models detecting crop diseases</span>
+        </div>
+        <div class="stat-box-item">
+          <span class="num">15%</span>
+          <span class="label">Average yield increase with precision farming using AI</span>
+        </div>
+        <div class="stat-box-item">
+          <span class="num">3x</span>
+          <span class="label">Faster disease diagnosis compared to manual scouting</span>
+        </div>
+      </div>
+
+      <h2>Featured Video: AI-Powered Precision Farming</h2>
+      <div style="margin:2rem 0;border-radius:12px;overflow:hidden;max-width:100%;">
+        <video width="100%" height="auto" controls style="border-radius:12px;background:#000;">
+          <source src="../videos/agriculture.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <h2>Crop Disease Detection: From Leaf to Label</h2>
+      <p>
+        Crop diseases caused by fungi, bacteria, and viruses destroy billions of dollars of crops annually.
+        Early detection is critical - but manual scouting of vast fields is expensive and slow.
+        Deep learning vision models can identify diseases from leaf images with superhuman accuracy.
+      </p>
+
+      <h3>Computer Vision Models for Disease Detection</h3>
+      <div class="use-case-grid">
+        <div class="use-case-item">
+          <span class="use-case-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg></span>
+          <h4>ResNet & EfficientNet</h4>
+          <p>Pre-trained convolutional networks fine-tuned on crop leaf datasets achieve 95%+ accuracy in detecting late blight, powdery mildew, and rust on potato, wheat, and grape crops.</p>
+        </div>
+        <div class="use-case-item">
+          <span class="use-case-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="15" x2="15" y2="15"/></svg></span>
+          <h4>Attention Mechanisms</h4>
+          <p>Vision transformers and self-attention layers focus on diseased regions within leaves, making models interpretable - farmers can see exactly what the model identified.</p>
+        </div>
+        <div class="use-case-item">
+          <span class="use-case-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></span>
+          <h4>Mobile Deployment</h4>
+          <p>Quantized models run on smartphones and edge devices in the field, eliminating latency and connectivity constraints. Farmers get instant diagnosis without uploading to the cloud.</p>
+        </div>
+        <div class="use-case-item">
+          <span class="use-case-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="12 3 20.123 5.236 16.062 13.096 20.123 20.95 12 23 3.877 20.95 7.938 13.096 3.877 5.236 12 3"/></svg></span>
+          <h4>Real-Time Prediction</h4>
+          <p>Inference latency under 100ms on edge devices enables real-time analysis as farmers walk through fields or fly drones over crops.</p>
+        </div>
+      </div>
+
+      <h2>Yield Prediction: Forecasting Harvest Before Growth Peaks</h2>
+      <p>
+        Predicting crop yield months in advance enables farmers to optimize irrigation, fertilizer schedules, and harvest logistics.
+        Deep learning models combine satellite imagery, weather data, soil sensors, and historical records to forecast yield with remarkable accuracy.
+      </p>
+
+      <h3>Multi-Modal Yield Prediction</h3>
+      <p>
+        Convolutional neural networks process satellite imagery (Sentinel-2, Landsat) to measure vegetation indices like NDVI
+        (Normalized Difference Vegetation Index). Recurrent networks (LSTMs, GRUs) model temporal sequences of vegetation
+        growth over entire growing seasons. Gradient boosting models (XGBoost, LightGBM) integrate weather, soil, and agronomic
+        features to produce final yield predictions.
+      </p>
+
+      <p>
+        Companies like Indigo Ag and IBM's Research for Climate use these ensembles to predict corn and soybean yields
+        with ±10% accuracy - sufficient to inform operational decisions 6-8 weeks before harvest.
+      </p>
+
+      <h2>Drone Imagery and Precision Scouting</h2>
+      <p>
+        Agricultural drones equipped with multispectral and RGB cameras fly regular surveillance patterns over fields.
+        Object detection networks (YOLO, Faster R-CNN) identify affected plants at the individual level, creating
+        disease pressure maps. These maps guide farmers to spray only affected zones - reducing pesticide use and costs
+        while maximizing crop protection.
+      </p>
+
+      <div class="callout callout--success">
+        <strong class="callout-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+          Case Study: John Deere's See & Spray Technology
+        </strong>
+        <p>
+          John Deere's See & Spray equipment uses deep learning to identify individual weeds in real time and spray
+          them with herbicide at point-of-contact. The system reduces herbicide use by up to 90% while maintaining
+          crop yields - a significant win for sustainable agriculture and farmer economics.
+        </p>
+      </div>
+
+      <h2>Key Models and Datasets</h2>
+      <table class="tech-table">
+        <thead>
+          <tr>
+            <th>Application</th>
+            <th>Model / Dataset</th>
+            <th>Key Metrics</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Leaf Disease Classification</td>
+            <td>EfficientNet-B5, PlantVillage Dataset</td>
+            <td>98.5% accuracy across 38 crop-disease pairs</td>
+          </tr>
+          <tr>
+            <td>Yield Prediction</td>
+            <td>CNN-LSTM Ensemble + XGBoost</td>
+            <td>±10% RMAPE (Root Mean Absolute Percentage Error)</td>
+          </tr>
+          <tr>
+            <td>Weed Detection</td>
+            <td>YOLOv8, Real-time inference 10ms/image</td>
+            <td>95% precision, 90% recall in field conditions</td>
+          </tr>
+          <tr>
+            <td>Fruit Counting & Maturity</td>
+            <td>Faster R-CNN, Mask R-CNN</td>
+            <td>92% accuracy in harvesting readiness assessment</td>
+          </tr>
+          <tr>
+            <td>Soil Health Segmentation</td>
+            <td>U-Net, SegFormer</td>
+            <td>Semantic segmentation of soil quality from aerial imagery</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Challenges and Opportunities</h2>
+      <h3>Data Scarcity in Low-Income Regions</h3>
+      <p>
+        Small farms in developing countries lack the data infrastructure to train models. Transfer learning from
+        large Western agricultural datasets helps, but domain adaptation and federated learning approaches are
+        critical to democratize precision farming globally.
+      </p>
+
+      <h3>Seasonal and Environmental Variation</h3>
+      <p>
+        Models trained on one season's data may underperform in others due to different weather patterns, soil conditions,
+        and pest pressures. Continual learning frameworks that update models incrementally as new field data arrives
+        are essential for robustness.
+      </p>
+
+      <h3>Interpretability for Farmers</h3>
+      <p>
+        Farmers need to understand <em>why</em> a model recommends a particular action. Explainable AI techniques like
+        attention visualizations, LIME, and SHAP help make deep learning predictions transparent and actionable.
+      </p>
+
+      <h2>The Future: Climate-Resilient Crops</h2>
+      <p>
+        As climate change increases weather volatility and pest pressure, deep learning will play a vital role in
+        developing and deploying climate-resilient crop varieties. Generative models and reinforcement learning
+        can accelerate breeding programs, while real-time monitoring enables adaptive management in the face of
+        unprecedented conditions.
+      </p>
+
+    </article>
+
+    <!-- Post Navigation -->
+    <nav class="post-nav" aria-label="Post navigation">
+      <a href="manufacturing-industry4.html" class="post-nav-item" style="text-decoration:none;">
+        <div class="post-nav-label">← Previous</div>
+        <h4>Manufacturing &amp; Industry 4.0</h4>
+      </a>
+      <a href="energy-grid-optimization.html" class="post-nav-item" style="text-decoration:none;text-align:right;">
+        <div class="post-nav-label">Next →</div>
+        <h4>Energy &amp; Grid Optimization</h4>
+      </a>
+    </nav>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand">
+            <svg width="22" height="22" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+              <circle cx="14" cy="14" r="13" fill="#00bcd4" opacity="0.15"/>
+              <circle cx="14" cy="14" r="5" fill="#00bcd4"/>
+              <circle cx="4"  cy="9"  r="3" fill="#1a73e8"/>
+              <circle cx="4"  cy="19" r="3" fill="#1a73e8"/>
+              <circle cx="24" cy="9"  r="3" fill="#1a73e8"/>
+              <circle cx="24" cy="19" r="3" fill="#1a73e8"/>
+              <line x1="7" y1="9.5"  x2="11" y2="12.5" stroke="#00bcd4" stroke-width="1.5"/>
+              <line x1="7" y1="18.5" x2="11" y2="15.5" stroke="#00bcd4" stroke-width="1.5"/>
+              <line x1="21" y1="9.5"  x2="17" y2="12.5" stroke="#00bcd4" stroke-width="1.5"/>
+              <line x1="21" y1="18.8" x2="17" y2="15.5" stroke="#00bcd4" stroke-width="1.5"/>
+            </svg>
+            Deep<span>Learning</span> Insights
+          </div>
+          <p>An open knowledge hub dedicated to demystifying deep learning and showcasing its transformative impact across industries.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Articles</h5>
+          <ul class="footer-links">
+            <li><a href="../posts/computer-vision-healthcare.html">Computer Vision in Healthcare</a></li>
+            <li><a href="../posts/nlp-customer-service.html">NLP &amp; Chatbots</a></li>
+            <li><a href="../posts/autonomous-vehicles.html">Autonomous Vehicles</a></li>
+            <li><a href="../posts/finance-fraud-detection.html">Finance &amp; Fraud</a></li>
+            <li><a href="../posts/manufacturing-industry4.html">Manufacturing &amp; Industry 4.0</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Site</h5>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../index.html#newsletter">Subscribe</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span><strong style="color:#fff;">Sukant Ravichandran</strong></span>
+        <a href="../index.html" style="color:var(--accent);">← Back to Home</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
