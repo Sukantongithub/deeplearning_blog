@@ -1,9 +1,7 @@
-// Deep Learning Blog - main.js
-
 (function () {
   'use strict';
 
-  /* ── Mobile Navigation Toggle ── */
+  /* ── Mobile Nav ── */
   const navToggle = document.querySelector('.nav-toggle');
   const navLinks  = document.querySelector('.nav-links');
 
@@ -13,7 +11,7 @@
       navToggle.setAttribute('aria-expanded', isOpen);
     });
 
-    // Close menu when a link is clicked
+    // Close menu
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('open');
@@ -22,7 +20,6 @@
     });
   }
 
-  /* ── Mark Active Nav Link ── */
   (function markActive() {
     const current = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-links a').forEach(link => {
@@ -33,7 +30,6 @@
     });
   })();
 
-  /* ── Newsletter Form ── */
   const newsletterForm = document.querySelector('.newsletter-form');
   if (newsletterForm) {
     newsletterForm.addEventListener('submit', e => {
@@ -46,7 +42,6 @@
     });
   }
 
-  /* ── Toast Notification ── */
   function showToast(message) {
     let toast = document.getElementById('dl-toast');
     if (!toast) {
@@ -81,7 +76,6 @@
     }, 4000);
   }
 
-  /* ── Scroll-reveal Animation ── */
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(
       entries => {
@@ -101,7 +95,6 @@
     });
   }
 
-  /* ── Reading Progress Bar ── */
   const article = document.querySelector('.post-body');
   if (article) {
     const bar = document.createElement('div');
@@ -125,7 +118,7 @@
     }, { passive: true });
   }
 
-  /* ── Estimated Reading Time ── */
+  /* ── Reading Time ── */
   const postBody = document.querySelector('.post-body');
   const readingTimeEl = document.querySelector('.reading-time');
   if (postBody && readingTimeEl) {
@@ -134,7 +127,7 @@
     readingTimeEl.textContent = `${minutes} min read`;
   }
 
-  /* ── Back to Top Button ── */
+  /* ── Nav Top Button ── */
   const backTopBtn = document.createElement('button');
   backTopBtn.innerHTML = '&#8679;';
   backTopBtn.title = 'Back to top';
